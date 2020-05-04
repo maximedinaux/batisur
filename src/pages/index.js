@@ -1,3 +1,6 @@
 import React from "react"
 
-export default () => <div>Hello from Bati-Sur!</div>
+//components
+import Layout from "../components/Layout"
+
+export default () => <Layout>Hello from Bati-Sur!</Layout>
