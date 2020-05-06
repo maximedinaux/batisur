@@ -18,6 +18,13 @@ exports.createPages = async ({ graphql, actions }) => {
           id
         }
       }
+      contactPage: allContentfulContact {
+        nodes {
+          path
+          title
+          id
+        }
+      }
     }
   `)
   result.data.simplePage.nodes.forEach(simplePage => {
@@ -35,6 +42,15 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`src/templates/InfoPageTemplate.js`),
       context: {
         slug: infoPage.id,
+      },
+    })
+  })
+  result.data.contactPage.nodes.forEach(contact => {
+    createPage({
+      path: `${contact.path}`,
+      component: path.resolve(`src/templates/ContactTemplate.js`),
+      context: {
+        slug: contact.id,
       },
     })
   })

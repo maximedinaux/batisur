@@ -9,12 +9,18 @@ const getData = graphql`
         phoneLink
       }
     }
+    contact: allContentfulContact {
+      nodes {
+        sidebarText
+      }
+    }
   }
 `
 
 const ContactBlock = () => {
   const data = useStaticQuery(getData)
   const info = data.info.nodes[0]
+  const contact = data.contact.nodes[0]
   return (
     <div className="block">
       <h2>Contactez-nous</h2>
@@ -24,7 +30,7 @@ const ContactBlock = () => {
           <a href={info.phoneLink}>{info.phoneTitle}</a>
         </li>
       </ul>
-      <p>Contactez-nous pour vos travaux, demandes, informations, urgences.</p>
+      <p>{contact.sidebarText}</p>
     </div>
   )
 }
