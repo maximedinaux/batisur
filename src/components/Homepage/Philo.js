@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 const Philo = () => {
   return (
-    <div className="wrapper">
+    <div className="wrapper philo">
       <div className="container flex">
         <div className="content">
           <span className="slogan">Notre philosphie</span>

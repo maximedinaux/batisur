@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
-import styled from "styled-components"
 
 const getData = graphql`
   {
@@ -18,21 +17,24 @@ const getData = graphql`
   }
 `
 
-const Branding = ({ className }) => {
+const Branding = () => {
   const data = useStaticQuery(getData)
   const info = data.info.nodes[0]
+
+  const sitename = info.title.split("-")
   return (
-    <h1 className={className}>
-      <Link to="/">
-        <Img fluid={info.logo.fluid} alt="logo bati-sur" className="logo" />
-        {info.title}
-      </Link>
-    </h1>
+    <div className="branding">
+      <h1>
+        <Link to="/">
+          <Img fluid={info.logo.fluid} alt="logo bati-sur" className="logo" />
+          <div className="sitename">
+            {sitename[0]}
+            <span>{sitename[1]}</span>
+          </div>
+        </Link>
+      </h1>
+    </div>
   )
 }
 
-export default styled(Branding)`
-  .logo {
-    width: 50px;
-  }
-`
+export default Branding

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 
 const getData = graphql`
   {
@@ -27,7 +27,7 @@ const InfoHeader = () => {
   const data = useStaticQuery(getData)
   const info = data.info.nodes[0]
   return (
-    <div>
+    <div className="headerInfo">
       <ul>
         <li>
           <div
@@ -44,6 +44,9 @@ const InfoHeader = () => {
           <span>{info.argTitle}</span>
         </li>
       </ul>
+      <div className="btn">
+        <Link to="/contact">Contact</Link>
+      </div>
     </div>
   )
 }

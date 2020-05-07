@@ -21,7 +21,7 @@ const getData = graphql`
 const Chiffre = () => {
   const data = useStaticQuery(getData)
   return (
-    <div className="wrapper">
+    <div className="wrapper chiffre">
       <div className="container">
         {data.chiffres.nodes.map((item, index) => {
           return (
@@ -32,7 +32,7 @@ const Chiffre = () => {
                   __html: item.icon.svg.content,
                 }}
               />
-              <div>
+              <div className="content">
                 <span>
                   <span className="number">{item.number}</span>
                   {item.suffixe ? item.suffixe : null}

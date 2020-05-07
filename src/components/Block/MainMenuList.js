@@ -4,17 +4,19 @@ import { Link } from "gatsby"
 //components
 import MainMenu from "../../constants/MainMenu"
 
-const MainMenuList = () => {
+const MainMenuList = ({ statut }) => {
   return (
-    <ul>
-      {MainMenu.map((item, index) => {
-        return (
-          <li key={index}>
-            <Link to={item.path}>{item.title}</Link>
-          </li>
-        )
-      })}
-    </ul>
+    <div className="menu">
+      <ul className={statut}>
+        {MainMenu.map((item, index) => {
+          return (
+            <li key={index}>
+              <Link to={item.path}>{item.title}</Link>
+            </li>
+          )
+        })}
+      </ul>
+    </div>
   )
 }
 

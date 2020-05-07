@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
-import styled from "styled-components"
 
 //react
 import { Zoom } from "react-slideshow-image"
@@ -36,11 +35,11 @@ const zoomOutProperties = {
   arrows: true,
 }
 
-const SlideShowHome = ({ className }) => {
+const SlideShowHome = () => {
   const data = useStaticQuery(getData)
 
   return (
-    <div className={className}>
+    <div className="slideshow">
       <Zoom {...zoomOutProperties}>
         {data.slide.nodes.map((item, index) => {
           return (
@@ -69,8 +68,4 @@ const SlideShowHome = ({ className }) => {
   )
 }
 
-export default styled(SlideShowHome)`
-  .slide {
-    width: 100%;
-  }
-`
+export default SlideShowHome

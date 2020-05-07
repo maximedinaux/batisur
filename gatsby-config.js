@@ -15,6 +15,13 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-inline-svg`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
+      },
+    },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.SPACE_ID,

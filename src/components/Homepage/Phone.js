@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
 
 const getData = graphql`
   {
@@ -9,25 +10,43 @@ const getData = graphql`
         phoneLink
       }
     }
+    images: allFile(
+      filter: {
+        sourceInstanceName: { eq: "images" }
+        name: { eq: "bg-hotline" }
+      }
+    ) {
+      nodes {
+        sourceInstanceName
+        childImageSharp {
+          fluid(maxWidth: 1200) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
   }
 `
 
 const Phone = () => {
   const data = useStaticQuery(getData)
   const info = data.info.nodes[0]
+  const fluid = data.images.nodes[0].childImageSharp.fluid
   return (
-    <div className="wrapper">
-      <div className="container">
-        <h2>Pour les urgences</h2>
-        <h3>
-          24/7 : <a href={info.phoneLink}>{info.phoneTitle}</a>
-        </h3>
-        <p>
-          Pour toutes vos questions et les interventions urgentes sur chantier.
-          Nous sommes là.
-        </p>
+    <BackgroundImage fluid={fluid} className="hotline">
+      <div className="wrapper phone">
+        <div className="container">
+          <h2>Pour les urgences</h2>
+          <h3>
+            24/7 : <a href={info.phoneLink}>{info.phoneTitle}</a>
+          </h3>
+          <p>
+            Pour toutes vos questions et les interventions urgentes sur
+            chantier. Nous sommes là.
+          </p>
+        </div>
       </div>
-    </div>
+    </BackgroundImage>
   )
 }
 

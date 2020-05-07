@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
-import styled from "styled-components"
 
 //constant
 import InfoPageMenu from "../constants/InfoPageMenu"
@@ -11,7 +10,7 @@ const getData = graphql`
     info: allContentfulInfo {
       nodes {
         title
-        logo {
+        logo: logoBottom {
           fluid {
             ...GatsbyContentfulFluid
           }
@@ -22,45 +21,38 @@ const getData = graphql`
   }
 `
 
-const Bottom = ({ className }) => {
+const Bottom = () => {
   const data = useStaticQuery(getData)
   const info = data.info.nodes[0]
+
+  const sitename = info.title.split("-")
   return (
-    <div className={className}>
-      <div className="wrapper">
-        <div className="container">
-          <h1>
-            <Link to="/">
-              <Img
-                fluid={info.logo.fluid}
-                alt="logo bati-sur"
-                className="logo"
-              />
-              {info.title}
-            </Link>
-          </h1>
-          <p>
-            {info.title} - {info.slogan}
-          </p>
-          <ul>
-            {InfoPageMenu.map((item, index) => {
-              return (
-                <li key={index}>
-                  <Link to={item.path}>{item.title}</Link>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
+    <div className="wrapper bottom">
+      <div className="container">
+        <h1>
+          <Link to="/">
+            <Img fluid={info.logo.fluid} alt="logo bati-sur" className="logo" />
+            <div className="sitename">
+              {sitename[0]}
+              <span>{sitename[1]}</span>
+            </div>
+          </Link>
+        </h1>
+        <p>
+          <div className="sitename">{info.title}</div>- {info.slogan}
+        </p>
+        <ul>
+          {InfoPageMenu.map((item, index) => {
+            return (
+              <li key={index}>
+                <Link to={item.path}>{item.title}</Link>
+              </li>
+            )
+          })}
+        </ul>
       </div>
     </div>
   )
 }
 
-export default styled(Bottom)`
-  text-align: center;
-  .logo {
-    width: 50px;
-    margin: 0 auto;
-  }
-`
+export default Bottom

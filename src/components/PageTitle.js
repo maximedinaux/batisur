@@ -4,7 +4,7 @@ import BackgroundImage from "gatsby-background-image"
 
 const PageTitle = ({ crumbs, title, fluid }) => {
   return (
-    <BackgroundImage fluid={fluid} className="wrapper">
+    <BackgroundImage fluid={fluid} className="wrapper pageTitle">
       <div className="container">
         <h1>{title}</h1>
         <Breadcrumb crumbs={crumbs} crumbSeparator=" / " crumbLabel={title} />

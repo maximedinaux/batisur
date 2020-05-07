@@ -24,7 +24,7 @@ const ServicesHome = () => {
   const data = useStaticQuery(getData)
 
   return (
-    <div className="wrapper">
+    <div className="wrapper serviceHome">
       <div className="container">
         <h2>Nos services</h2>
         {data.services.nodes.map((item, index) => {
