@@ -39,7 +39,8 @@ const ContactTemplate = ({
               0486 88 23 92
             </p>
           </div>
-          <form>
+          <form method="post" netlify-honeypot="bot-field" data-netlify="true">
+            <input type="hidden" name="bot-field" />
             <p>
               <label htmlFor="nom">
                 Nom <span>*</span>

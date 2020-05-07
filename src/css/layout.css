@@ -41,7 +41,11 @@
 .footer .block li a:hover,
 .footer .block li a,
 .bottom li a:hover,
-.bottom li a {
+.bottom li a,
+.simplePage .sidebar .block.contact .element a:hover,
+.simplePage .sidebar .block.contact .element a,
+.simplePage .sidebar .block.service li a:hover,
+.simplePage .sidebar .block.service li a {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -61,6 +65,55 @@
 }
 .flex-column-reverse {
   flex-direction: column-reverse;
+}
+
+/* mep */
+
+.simplePage .content h2,
+.simplePage .content h3,
+.simplePage .content h4 {
+  font-weight: bolder;
+  color: var(--darkColor);
+  font-family: var(--fontTitle);
+  line-height: 100%;
+  display: block;
+  margin: 30px 0px 10px;
+}
+.simplePage .content h2 {
+  font-size: 3em;
+}
+
+.simplePage .content h3 {
+  font-size: 2em;
+}
+
+.simplePage .content h4 {
+  font-size: 1.5em;
+}
+
+.simplePage .content .gatsby-image-wrapper {
+  margin-bottom: 30px;
+}
+
+.simplePage .content p,
+.simplePage .content ul,
+.simplePage .content ol {
+  line-height: 150%;
+  margin-bottom: 20px;
+}
+
+.simplePage .content li p {
+  margin: 0px;
+}
+
+.simplePage .content ul,
+.simplePage .content ol {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.simplePage .content a {
+  color: var(--contrastColor);
 }
 
 /* pagetitle */
@@ -139,7 +192,9 @@
   justify-content: center;
   align-items: center;
   margin-right: 5px;
+  cursor: pointer;
 }
+
 .header .mobileBtn span {
   width: 25px;
   height: 1px;
@@ -500,7 +555,59 @@
 }
 
 /* SimplePageTemplate */
+.simplePage .content {
+  padding: 50px 0px;
+}
 
+.simplePage .sidebar .block {
+  background-color: #f2f4f6;
+  margin-bottom: 20px;
+  padding: 20px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.simplePage .sidebar .block h2 {
+  text-transform: uppercase;
+  color: var(--darkColor);
+  font-weight: bolder;
+  font-size: 1em;
+  display: block;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.simplePage .sidebar .block.contact .element {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  align-items: center;
+}
+.simplePage .sidebar .block.contact .element a {
+  color: var(--darkColor);
+  text-decoration: none;
+  padding: 0px 5px;
+}
+.simplePage .sidebar .block.contact .element a:hover {
+  color: var(--contrastColor);
+}
+.simplePage .sidebar .block.contact p {
+  line-height: 150%;
+}
+
+.simplePage .sidebar .block.service li {
+  display: block;
+}
+
+.simplePage .sidebar .block.service li a {
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  padding: 5px 0px;
+  display: block;
+}
+.simplePage .sidebar .block.service li a:hover {
+  color: var(--contrastColor);
+}
 /* little */
 @media screen and (min-width: 500px) {
   .container {

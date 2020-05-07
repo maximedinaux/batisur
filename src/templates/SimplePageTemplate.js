@@ -74,17 +74,19 @@ const SimplePageTemplate = ({
   console.log(content)
   return (
     <Layout>
-      <PageTitle crumbs={crumbs} title={title} fluid={fluid} />
-      <div className="wrapper">
-        <div className="container flex flex-column-reverse">
-          <div className="sidebar">
-            <ContactBlock />
-            <ServicesBlock />
-          </div>
-          <div className="content">
-            {content
-              ? documentToReactComponents(content.json, option)
-              : "no content"}
+      <div className="simplePage">
+        <PageTitle crumbs={crumbs} title={title} fluid={fluid} />
+        <div className="wrapper">
+          <div className="container flex flex-column-reverse">
+            <div className="sidebar">
+              <ContactBlock />
+              <ServicesBlock />
+            </div>
+            <div className="content">
+              {content
+                ? documentToReactComponents(content.json, option)
+                : "no content"}
+            </div>
           </div>
         </div>
       </div>

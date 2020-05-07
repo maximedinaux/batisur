@@ -16,7 +16,11 @@ const Header = () => {
         <div className="container flex">
           <Branding />
           <InfoHeader />
-          <button type="button" className="mobileBtn" onClick={toggleNav}>
+          <button
+            type="button"
+            className={isOpen ? "mobileBtn active" : "mobileBtn"}
+            onClick={toggleNav}
+          >
             <span></span>
             <span></span>
             <span></span>

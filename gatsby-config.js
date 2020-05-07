@@ -8,6 +8,11 @@ require("dotenv").config({
 })
 
 module.exports = {
+  siteMetadata: {
+    title: `Bati-sur`,
+    siteUrl: `https://bati-sur.be`,
+    description: `Des travaux de qualité`,
+  },
   /* Your site config here */
   plugins: [
     `gatsby-transformer-sharp`,

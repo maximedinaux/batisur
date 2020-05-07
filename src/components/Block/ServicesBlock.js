@@ -6,7 +6,7 @@ import MainMenu from "../../constants/MainMenu"
 
 const ServicesBlock = () => {
   return (
-    <div className="block">
+    <div className="block service">
       <h2>Nos services</h2>
       <ul>
         {MainMenu.map((item, index) => {
