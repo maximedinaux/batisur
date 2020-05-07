@@ -39,37 +39,42 @@ const ContactTemplate = ({
               0486 88 23 92
             </p>
           </div>
-          <form method="post" netlify-honeypot="bot-field" data-netlify="true">
-            <input type="hidden" name="bot-field" />
+          <form
+            method="POST"
+            name="contact"
+            data-netlify="true"
+            action="/message"
+          >
+            <input type="hidden" data-netlify-recaptcha="true" />
             <p>
               <label htmlFor="nom">
                 Nom <span>*</span>
+                <input type="text" id="nom" name="nom" />
               </label>
-              <input type="text" id="nom" />
             </p>
             <p>
               <label htmlFor="email">
                 Email <span>*</span>
+                <input type="text" id="email" name="email" />
               </label>
-              <input type="text" id="email" />
             </p>
             <p>
               <label htmlFor="sujet">
                 Sujet <span>*</span>
+                <select id="sujet" name="type[]">
+                  <option value="info">Demande d'information</option>
+                  <option value="autre">Autre</option>
+                </select>
               </label>
-              <select id="sujet">
-                <option value="info">Demande d'information</option>
-                <option value="autre">Autre</option>
-              </select>
             </p>
             <p>
               <label htmlFor="msg">
                 Votre message <span>*</span>
+                <textarea id="msg" name="msg"></textarea>
               </label>
-              <textarea id="msg"></textarea>
             </p>
             <p>
-              <input type="submit" value="envoyer" />
+              <button type="submit">Envoyer</button>
             </p>
           </form>
         </div>
