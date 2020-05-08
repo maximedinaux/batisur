@@ -1,0 +1,292 @@
+/* index slideshow */
+.slideshow {
+  color: #fff;
+}
+.slideshow .slide {
+  display: block;
+  width: 100%;
+  padding: 50px 0px;
+}
+.slideshow .container {
+  padding: 0px 30px;
+}
+.slideshow .slide h1 {
+  margin-bottom: 10px;
+}
+.slideshow .slide h1 span {
+  font-weight: bolder;
+  display: block;
+}
+.slideshow .slide p {
+  line-height: 150%;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+}
+.slideshow .slide .btn a {
+  display: inline-block;
+  background-color: var(--contrastColor);
+  color: var(--darkColor);
+  text-decoration: none;
+  padding: 15px 20px;
+  margin-right: 10px;
+}
+.slideshow .slide .btn a:hover {
+  background-color: var(--darkColor);
+  color: var(--lightColor);
+}
+
+/* index serviceHome */
+.serviceHome {
+  background-color: #f2f4f6;
+  padding: 30px 0px;
+}
+.serviceHome h2 {
+  color: var(--darkColor);
+  font-weight: bolder;
+  font-size: 2.5em;
+  font-family: var(--fontTitle);
+}
+.serviceHome .element {
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceHome section {
+  display: block;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-bottom: 10px solid #ddd;
+}
+.serviceHome section:hover {
+  background-color: var(--lightColor);
+  border: 1px solid var(--lightColor);
+  border-bottom: 10px solid var(--contrastColor);
+}
+
+.serviceHome section .icon {
+  width: 75px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 0;
+}
+
+.serviceHome section .icon:before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  z-index: -1;
+  position: absolute;
+  bottom: -5px;
+  left: -5px;
+  background-color: var(--contrastColor);
+}
+
+.serviceHome section h3 {
+  font-family: var(--fontTitle);
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: var(--darkColor);
+  margin: 10px 0px;
+}
+.serviceHome section p {
+  line-height: 150%;
+}
+
+.serviceHome section a {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  margin-top: 20px;
+  font-weight: bolder;
+}
+.serviceHome section:hover a {
+  color: var(--contrastColor);
+}
+
+/* index chiffre */
+
+.chiffre {
+  padding: 30px 0px;
+}
+
+.chiffre .element {
+  display: flex;
+  flex-direction: column;
+}
+.chiffre section {
+  background-color: #f2f4f6;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+}
+.chiffre section .icon {
+  fill: var(--contrastColor);
+  width: 30px;
+  margin-right: 10px;
+}
+.chiffre section .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.chiffre section .content span {
+  font-weight: bolder;
+}
+.chiffre section .content > span {
+  margin-right: 5px;
+}
+
+/* index philo */
+.philo {
+  background-color: #f2f4f6;
+  padding: 30px 0px;
+}
+
+.philo .content .slogan {
+  color: var(--contrastColor);
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.philo .content h2 {
+  color: var(--darkColor);
+  font-family: var(--fontTitle);
+  font-weight: bolder;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.philo .content p {
+  line-height: 150%;
+}
+
+.philo .sidebar {
+  margin-top: 30px;
+}
+
+.philo .sidebar h2 {
+  color: var(--darkColor);
+  font-family: var(--fontTitle);
+  font-size: 1.5em;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+
+.philo .sidebar p {
+  line-height: 150%;
+}
+
+.philo .sidebar a {
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 15px 20px;
+  margin-top: 10px;
+  text-decoration: none;
+  color: var(--darkColor);
+  font-weight: bolder;
+}
+.philo .sidebar a:hover {
+  background-color: var(--darkColor);
+  color: var(--lightColor);
+  border: 1px solid var(--darkColor);
+}
+
+/* index phone */
+.hotline {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.phone {
+  padding: 75px 0px;
+  text-align: center;
+}
+
+.phone h2 {
+  font-family: var(--fontTitle);
+  color: var(--darkColor);
+  font-weight: bolder;
+  font-size: 2.125em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.phone h3 {
+  font-size: 2.5em;
+  font-weight: bolder;
+  color: var(--darkColor);
+  margin-bottom: 20px;
+}
+.phone h3 a {
+  color: var(--lightColor);
+  text-decoration: none;
+  font-weight: bolder;
+}
+.phone p {
+  color: var(--darkColor);
+  line-height: 150%;
+}
+
+/* little */
+@media screen and (min-width: 500px) {
+}
+
+/* narrow */
+@media screen and (min-width: 740px) {
+  .slideshow .container > * {
+    width: 60%;
+  }
+  .slideshow .slide {
+    padding: 100px 0px;
+  }
+
+  .serviceHome .element {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .serviceHome .element section {
+    width: 46%;
+    margin: 20px 2%;
+  }
+  .chiffre .element {
+    flex-direction: row;
+  }
+  .chiffre .element section {
+    width: 31%;
+    margin: 0px 1%;
+  }
+  .chiffre section .content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .philo .container {
+    flex-direction: row;
+  }
+  .philo .content h2 {
+    font-size: 4em;
+    font-weight: normal;
+  }
+  .philo .container .sidebar {
+    width: 30%;
+    margin-left: 4%;
+    padding-left: 4%;
+    border-left: 1px solid rgba(0, 0, 0, 0.125);
+  }
+  .philo .container .content {
+    width: 60%;
+  }
+}
+
+/* normal */
+@media screen and (min-width: 980px) {
+  .serviceHome .element section {
+    width: 31%;
+    margin: 20px 1%;
+  }
+}
+
+/* wide */
+@media screen and (min-width: 1200px) {
+}

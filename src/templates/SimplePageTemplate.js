@@ -12,6 +12,9 @@ import ServicesBlock from "../components/Block/ServicesBlock"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types"
 
+//css
+import "../css/simplePage.css"
+
 const SimplePageTemplate = ({
   data: {
     simple: {

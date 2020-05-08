@@ -27,21 +27,23 @@ const ServicesHome = () => {
     <div className="wrapper serviceHome">
       <div className="container">
         <h2>Nos services</h2>
-        {data.services.nodes.map((item, index) => {
-          return (
-            <section key={index}>
-              <div
-                className="icon"
-                dangerouslySetInnerHTML={{
-                  __html: item.icon.svg.content,
-                }}
-              />
-              <h3>{item.title}</h3>
-              <p>{item.childContentfulSimplePageResumeTextNode.resume}</p>
-              <Link to={item.path}>En savoir plus</Link>
-            </section>
-          )
-        })}
+        <div className="element">
+          {data.services.nodes.map((item, index) => {
+            return (
+              <section key={index}>
+                <div
+                  className="icon"
+                  dangerouslySetInnerHTML={{
+                    __html: item.icon.svg.content,
+                  }}
+                />
+                <h3>{item.title}</h3>
+                <p>{item.childContentfulSimplePageResumeTextNode.resume}</p>
+                <Link to={item.path}>En savoir plus</Link>
+              </section>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

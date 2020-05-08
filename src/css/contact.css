@@ -1,0 +1,94 @@
+.contact {
+  padding: 50px 0px;
+}
+
+.contact .slogan {
+  color: var(--contrastColor);
+  font-weight: bolder;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.contact h2 {
+  font-size: 2em;
+  color: var(--darkColor);
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+.contact h2 a {
+  color: var(--darkColor);
+  font-weight: bolder;
+  text-decoration: none;
+}
+.contact h2 a:hover {
+  color: var(--contrastColor);
+}
+.contact .element p {
+  margin-bottom: 20px;
+  line-height: 150%;
+}
+
+.contact .element {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  margin-bottom: 30px;
+}
+.contact form p {
+  margin-bottom: 30px;
+}
+
+.contact form p span {
+  color: red;
+}
+.contact form label input,
+.contact form label select,
+.contact form label textarea {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.contact form label input,
+.contact form label select {
+  height: 30px;
+}
+
+.contact form label textarea {
+  height: 150px;
+}
+
+.contact form button,
+.contact .btn a {
+  background-color: var(--darkColor);
+  border: 0px;
+  color: #fff;
+  padding: 10px 20px;
+  font-family: var(--fontMain);
+  font-size: 1em;
+  cursor: pointer;
+}
+.contact form button:hover,
+.contact .btn a:hover {
+  background-color: var(--contrastColor);
+  color: var(--darkColor);
+}
+.contact .btn a {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+/* little */
+@media screen and (min-width: 500px) {
+}
+
+/* narrow */
+@media screen and (min-width: 740px) {
+}
+
+/* normal */
+@media screen and (min-width: 980px) {
+}
+
+/* wide */
+@media screen and (min-width: 1200px) {
+}

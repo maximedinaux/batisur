@@ -1,0 +1,78 @@
+/* SimplePageTemplate */
+.simplePage .content {
+  padding: 50px 0px;
+}
+
+.simplePage .sidebar .block {
+  background-color: #f2f4f6;
+  margin-bottom: 20px;
+  padding: 20px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.simplePage .sidebar .block h2 {
+  text-transform: uppercase;
+  color: var(--darkColor);
+  font-weight: bolder;
+  font-size: 1em;
+  display: block;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.simplePage .sidebar .block.contact .element {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  align-items: center;
+}
+.simplePage .sidebar .block.contact .element a {
+  color: var(--darkColor);
+  text-decoration: none;
+  padding: 0px 5px;
+}
+.simplePage .sidebar .block.contact .element a:hover {
+  color: var(--contrastColor);
+}
+.simplePage .sidebar .block.contact p {
+  line-height: 150%;
+}
+
+.simplePage .sidebar .block.service li {
+  display: block;
+}
+
+.simplePage .sidebar .block.service li a {
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  padding: 5px 0px;
+  display: block;
+}
+.simplePage .sidebar .block.service li a:hover {
+  color: var(--contrastColor);
+}
+
+/* little */
+@media screen and (min-width: 500px) {
+}
+
+/* narrow */
+@media screen and (min-width: 740px) {
+}
+
+/* normal */
+@media screen and (min-width: 980px) {
+  .simplePage .container .sidebar {
+    width: 30%;
+    margin-right: 3%;
+    margin-top: 75px;
+  }
+  .simplePage .container .content {
+    width: 67%;
+  }
+}
+
+/* wide */
+@media screen and (min-width: 1200px) {
+}

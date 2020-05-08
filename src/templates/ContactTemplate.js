@@ -5,6 +5,9 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import PageTitle from "../components/PageTitle"
 
+//css
+import "../css/contact.css"
+
 const ContactTemplate = ({
   data: {
     contact: {
@@ -23,21 +26,23 @@ const ContactTemplate = ({
   return (
     <Layout>
       <PageTitle crumbs={crumbs} title={title} fluid={fluid} />
-      <div className="wrapper">
+      <div className="wrapper contact">
         <div className="container">
           <div>
             <div className="slogan">{slogan}</div>
             <h2>
               Téléphone : <a href={info.phoneLink}>{info.phoneTitle}</a>
             </h2>
-            <p>
-              Pour toute information ou pour une intervention rapide (aussi en
-              urgence) contactez-nous au 0495.44.46.90.
-            </p>
-            <p>
-              Pour le service administratif et facturation contactez-nous au
-              0486 88 23 92
-            </p>
+            <div className="element">
+              <p>
+                Pour toute information ou pour une intervention rapide (aussi en
+                urgence) contactez-nous au 0495.44.46.90.
+              </p>
+              <p>
+                Pour le service administratif et facturation contactez-nous au
+                0486 88 23 92
+              </p>
+            </div>
           </div>
           <form
             method="POST"

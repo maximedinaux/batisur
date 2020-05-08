@@ -23,25 +23,27 @@ const Chiffre = () => {
   return (
     <div className="wrapper chiffre">
       <div className="container">
-        {data.chiffres.nodes.map((item, index) => {
-          return (
-            <section key={index}>
-              <div
-                className="icon"
-                dangerouslySetInnerHTML={{
-                  __html: item.icon.svg.content,
-                }}
-              />
-              <div className="content">
-                <span>
-                  <span className="number">{item.number}</span>
-                  {item.suffixe ? item.suffixe : null}
-                </span>
-                <p>{item.title}</p>
-              </div>
-            </section>
-          )
-        })}
+        <div className="element">
+          {data.chiffres.nodes.map((item, index) => {
+            return (
+              <section key={index}>
+                <div
+                  className="icon"
+                  dangerouslySetInnerHTML={{
+                    __html: item.icon.svg.content,
+                  }}
+                />
+                <div className="content">
+                  <span>
+                    <span className="number">{item.number}</span>
+                    {item.suffixe ? item.suffixe : null}
+                  </span>
+                  <p>{item.title}</p>
+                </div>
+              </section>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

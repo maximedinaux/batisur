@@ -8,6 +8,9 @@ import Chiffres from "../components/Homepage/Chiffre"
 import Philo from "../components/Homepage/Philo"
 import Phone from "../components/Homepage/Phone"
 
+//css
+import "../css/index.css"
+
 export default () => (
   <Layout>
     <Slider />

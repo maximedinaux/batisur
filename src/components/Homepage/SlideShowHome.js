@@ -7,7 +7,7 @@ import { Zoom } from "react-slideshow-image"
 
 const getData = graphql`
   {
-    slide: allContentfulSlideShowHome {
+    slide: allContentfulSlideShowHome(sort: { fields: order }) {
       nodes {
         background {
           fluid(maxWidth: 1200) {

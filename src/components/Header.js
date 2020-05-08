@@ -12,7 +12,7 @@ const Header = () => {
   }
   return (
     <div className="header">
-      <div className="wrapper ">
+      <div className="wrapper top">
         <div className="container flex">
           <Branding />
           <InfoHeader />
@@ -27,7 +27,7 @@ const Header = () => {
           </button>
         </div>
       </div>
-      <div className="wrapper">
+      <div className="wrapper mainMenu">
         <div className="container">
           <MainMenu statut={isOpen ? "open" : "closed"} />
         </div>
