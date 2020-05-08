@@ -11,7 +11,7 @@
 
 /* correction */
 .react-slideshow-container .nav:last-of-type {
-  margin-left: -60px;
+  margin-left: -60px !important;
 }
 /* var */
 :root {
