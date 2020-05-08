@@ -9,6 +9,10 @@
   font-weight: 400;
 }
 
+/* correction */
+.react-slideshow-container .nav:last-of-type {
+  margin-left: -60px;
+}
 /* var */
 :root {
   --darkColor: #061e45;
