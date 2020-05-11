@@ -8,16 +8,16 @@ const getData = graphql`
       siteMetadata {
         siteTitle: title
         siteDsc: description
-        image
+        siteImage: image
         siteUrl
       }
     }
   }
 `
 
-const SEO = ({ title, dsc }) => {
+const SEO = ({ title, dsc, image }) => {
   const { site } = useStaticQuery(getData)
-  const { siteDsc, siteTitle, siteUrl, image } = site.siteMetadata
+  const { siteDsc, siteTitle, siteUrl, siteImage } = site.siteMetadata
 
   return (
     <Helmet htmlAttributes={{ lang: "fr" }} title={`${title} | ${siteTitle}`}>
@@ -27,7 +27,10 @@ const SEO = ({ title, dsc }) => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={siteTitle} />
       <meta name="twitter:description" content={dsc || siteDsc} />
-      <meta name="twitter:image" content={`${siteUrl}/${image}`} />
+      <meta
+        name="twitter:image"
+        content={`${image}` || `${siteUrl}/${siteImage}`}
+      />
     </Helmet>
   )
 }
