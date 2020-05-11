@@ -12,7 +12,7 @@ module.exports = {
     title: `Bati-sur`,
     siteUrl: `https://bati-sur.netlify.com`,
     description: `Des travaux de qualité`,
-    image: "batisur.jpg",
+    image: "/batisur.jpg",
   },
   /* Your site config here */
   plugins: [
