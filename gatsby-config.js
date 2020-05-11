@@ -16,6 +16,7 @@ module.exports = {
   },
   /* Your site config here */
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -44,6 +45,14 @@ module.exports = {
         autoGenHomeLabel: `Accueil`,
         // exlude: optional, include to overwrite these default excluded pages
         exclude: [`/404`, `/404.html`, `/offline-plugin-app-shell-fallback`],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://bati-sur.netlify.com",
+        sitemap: "https://bati-sur.netlify.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
   ],
