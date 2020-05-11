@@ -4,6 +4,7 @@ import { graphql, Link } from "gatsby"
 //component
 import Layout from "../components/Layout"
 import PageTitle from "../components/PageTitle"
+import SEO from "../components/SEO"
 
 const message = ({
   data: {
@@ -19,6 +20,7 @@ const message = ({
   const title = "Contact"
   return (
     <Layout>
+      <SEO title="Message envoyé" />
       <PageTitle crumbs={crumbs} title={title} fluid={fluid} />
       <div className="wrapper contact">
         <div className="container">

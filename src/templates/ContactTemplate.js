@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 //component
 import Layout from "../components/Layout"
 import PageTitle from "../components/PageTitle"
+import SEO from "../components/SEO"
 
 //css
 import "../css/contact.css"
@@ -14,6 +15,7 @@ const ContactTemplate = ({
       title,
       slogan,
       background: { fluid },
+      seoDsc: { seoDsc },
     },
     info,
   },
@@ -25,6 +27,7 @@ const ContactTemplate = ({
 
   return (
     <Layout>
+      <SEO title={title} dsc={seoDsc} />
       <PageTitle crumbs={crumbs} title={title} fluid={fluid} />
       <div className="wrapper contact">
         <div className="container">
@@ -94,6 +97,9 @@ export const query = graphql`
       path
       title
       slogan
+      seoDsc {
+        seoDsc
+      }
       background {
         fluid {
           ...GatsbyContentfulFluid

@@ -39,7 +39,7 @@ const Bottom = () => {
           </Link>
         </h1>
         <p>
-          <div className="sitename">{info.title}</div>- {info.slogan}
+          <span className="sitename">{info.title}</span>- {info.slogan}
         </p>
         <ul>
           {InfoPageMenu.map((item, index) => {

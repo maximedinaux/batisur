@@ -1,12 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import SEO from "../components/SEO"
 //components
 import Layout from "../components/Layout"
 
 const error = ({ className }) => {
   return (
     <div className={className}>
+      <SEO title="Page 404" dsc="Page inexistante" />
       <Layout>
         <div className="wrapper error">
           <div className="container">

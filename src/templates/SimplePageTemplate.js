@@ -7,6 +7,7 @@ import Layout from "../components/Layout"
 import PageTitle from "../components/PageTitle"
 import ContactBlock from "../components/Block/ContactBlock"
 import ServicesBlock from "../components/Block/ServicesBlock"
+import SEO from "../components/SEO"
 
 //richText
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -21,6 +22,7 @@ const SimplePageTemplate = ({
       title,
       background: { fluid },
       content,
+      seoDsc: { seoDsc },
     },
   },
   pageContext,
@@ -36,7 +38,6 @@ const SimplePageTemplate = ({
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
       [BLOCKS.EMBEDDED_ASSET]: node => {
-        console.log(node)
         const image = node.data.target.fields.file["fr-BE"]
         const width = image.details.image.width
         return (
@@ -74,9 +75,9 @@ const SimplePageTemplate = ({
     },
   }
 
-  console.log(content)
   return (
     <Layout>
+      <SEO title={title} dsc={seoDsc} />
       <div className="simplePage">
         <PageTitle crumbs={crumbs} title={title} fluid={fluid} />
         <div className="wrapper">
@@ -102,6 +103,9 @@ export const query = graphql`
     simple: contentfulSimplePage(id: { eq: $slug }) {
       path
       title
+      seoDsc {
+        seoDsc
+      }
       background {
         fluid {
           ...GatsbyContentfulFluid

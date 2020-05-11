@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 //component
 import Layout from "../components/Layout"
 import PageTitle from "../components/PageTitle"
+import SEO from "../components/SEO"
 
 //richText
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -71,6 +72,7 @@ const InfoPageTemplate = ({
 
   return (
     <Layout>
+      <SEO title={title} />
       <div className="simplePage">
         <PageTitle crumbs={crumbs} title={title} fluid={fluid} />
         <div className="wrapper">
@@ -92,6 +94,7 @@ export const query = graphql`
     simple: contentfulInfoPage(id: { eq: $slug }) {
       path
       title
+
       background {
         fluid {
           ...GatsbyContentfulFluid
