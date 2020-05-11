@@ -20,10 +20,7 @@ const SimplePageTemplate = ({
   data: {
     simple: {
       title,
-      background: {
-        fluid,
-        file: { url },
-      },
+      background: { fluid },
       content,
       seoDsc: { seoDsc },
     },
@@ -80,7 +77,7 @@ const SimplePageTemplate = ({
 
   return (
     <Layout>
-      <SEO title={title} dsc={seoDsc} image={url} />
+      <SEO title={title} dsc={seoDsc} />
       <div className="simplePage">
         <PageTitle crumbs={crumbs} title={title} fluid={fluid} />
         <div className="wrapper">
@@ -112,9 +109,6 @@ export const query = graphql`
       background {
         fluid {
           ...GatsbyContentfulFluid
-        }
-        file {
-          url
         }
       }
       content: childContentfulSimplePageContentRichTextNode {
